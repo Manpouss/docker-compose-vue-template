@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  vue:
+    container_name: testVueContainer
+    image: 'node:17-alpine3.14'
+    working_dir: /home/node/app
+    command: 
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm run serve'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './test-vue-app:/home/node/app'
+ 
+ 
+ # docker run -ti --rm -v ${PWD}:/home/node/app -w /home/node/app node /bin/bash
+ # npm install -g @vue/cli
+ # vue create test-vue-app
